@@ -1,0 +1,77 @@
+# Supabase Configuration for Production
+
+# Project settings
+[project]
+# Set to your production project reference
+project_id = "your-production-project-ref"
+# EU region for GDPR compliance
+region = "eu-central-1"
+
+# Database settings
+[db]
+# Connection pool for production
+pool_mode = "transaction"
+max_pool_size = 10
+
+# Auth settings
+[auth]
+# Enable email verification
+enable_email_verification = true
+# Email change confirmation required
+email_change_confirmation_required = true
+# SMS auth disabled for MVP
+enable_sms_auth = false
+# Session duration (24 hours)
+session_duration_seconds = 86400
+# Refresh token rotation enabled
+refresh_token_rotation_enabled = true
+
+# Storage settings
+[storage]
+# File size limit (100MB)
+file_size_limit = 104857600
+# Allowed MIME types
+allowed_mime_types = [
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "application/pdf",
+  "text/plain"
+]
+
+# Edge Functions settings
+[functions]
+# Verify JWT in Edge Functions
+verify_jwt = true
+
+# Realtime settings
+[realtime]
+# Enable realtime for notifications
+enabled = true
+# Max message size (1MB)
+max_message_size = 1048576
+
+# Logging
+[logging]
+# Log level: debug, info, warn, error
+log_level = "info"
+# Slow query threshold (1000ms)
+slow_query_threshold = 1000
+
+# Backup settings
+[backup]
+# Daily backups enabled
+enabled = true
+# Retention period (30 days)
+retention_days = 30
+
+# Security
+[security]
+# Enforce HTTPS
+enforce_https = true
+# CORS allowed origins (set in environment)
+cors_allowed_origins = []
+# Rate limiting enabled
+rate_limiting_enabled = true
+# Max requests per minute per IP
+rate_limit_rpm = 1000
