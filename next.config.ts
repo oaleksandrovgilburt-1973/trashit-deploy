@@ -82,8 +82,7 @@ const nextConfig: NextConfig = {
   // Production source maps (disabled for security)
   productionBrowserSourceMaps: false,
 
-  // Swcminify for better performance
-  swcMinify: true,
+  // swcMinify is deprecated in Next.js 16+
 };
 
 export default nextConfig;
