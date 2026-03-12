@@ -1,3 +1,4 @@
+// Force Vercel rebuild - fix serverless functions detection
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
