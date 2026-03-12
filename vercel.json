@@ -4,115 +4,7 @@
   "devCommand": "npm run dev",
   "installCommand": "npm ci",
   "framework": "nextjs",
-  "public": false,
-  "env": [
-    {
-      "key": "DATABASE_URL",
-      "description": "Supabase PostgreSQL connection string",
-      "value": "@database_url",
-      "type": "secret"
-    },
-    {
-      "key": "NEXT_PUBLIC_SUPABASE_URL",
-      "description": "Supabase project URL",
-      "value": "@supabase_url",
-      "type": "secret"
-    },
-    {
-      "key": "NEXT_PUBLIC_SUPABASE_ANON_KEY",
-      "description": "Supabase anonymous key",
-      "value": "@supabase_anon_key",
-      "type": "secret"
-    },
-    {
-      "key": "SUPABASE_SERVICE_ROLE_KEY",
-      "description": "Supabase service role key",
-      "value": "@supabase_service_role_key",
-      "type": "secret"
-    },
-    {
-      "key": "JWT_SECRET",
-      "description": "JWT signing secret",
-      "value": "@jwt_secret",
-      "type": "secret"
-    },
-    {
-      "key": "STRIPE_SECRET_KEY",
-      "description": "Stripe secret key (live)",
-      "value": "@stripe_secret_key",
-      "type": "secret"
-    },
-    {
-      "key": "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY",
-      "description": "Stripe publishable key (live)",
-      "value": "@stripe_publishable_key",
-      "type": "secret"
-    },
-    {
-      "key": "STRIPE_WEBHOOK_SECRET",
-      "description": "Stripe webhook signing secret",
-      "value": "@stripe_webhook_secret",
-      "type": "secret"
-    },
-    {
-      "key": "RESEND_API_KEY",
-      "description": "Resend email service API key",
-      "value": "@resend_api_key",
-      "type": "secret"
-    },
-    {
-      "key": "NEXT_PUBLIC_POSTHOG_API_KEY",
-      "description": "PostHog analytics API key",
-      "value": "@posthog_api_key",
-      "type": "secret"
-    },
-    {
-      "key": "NEXT_PUBLIC_POSTHOG_HOST",
-      "description": "PostHog host URL",
-      "value": "https://us.i.posthog.com"
-    },
-    {
-      "key": "NEXT_PUBLIC_SENTRY_DSN",
-      "description": "Sentry error tracking DSN",
-      "value": "@sentry_dsn",
-      "type": "secret"
-    },
-    {
-      "key": "NEXT_PUBLIC_APP_URL",
-      "description": "Application public URL",
-      "value": "@app_url"
-    },
-    {
-      "key": "UPSTASH_REDIS_REST_URL",
-      "description": "Upstash Redis REST URL",
-      "value": "@upstash_redis_url",
-      "type": "secret"
-    },
-    {
-      "key": "UPSTASH_REDIS_REST_TOKEN",
-      "description": "Upstash Redis REST token",
-      "value": "@upstash_redis_token",
-      "type": "secret"
-    },
-    {
-      "key": "OAUTH_SERVER_URL",
-      "description": "OAuth server URL",
-      "value": "@oauth_server_url"
-    },
-    {
-      "key": "OWNER_NAME",
-      "description": "Application owner name",
-      "value": "TRASHit"
-    },
-    {
-      "key": "NODE_ENV",
-      "description": "Node environment",
-      "value": "production"
-    }
-  ],
-  "buildSettings": {
-    "commandForCI": "npm run build"
-  },
+  "regions": ["fra1"],
   "functions": {
     "api/**/*.ts": {
       "memory": 1024,
@@ -120,7 +12,6 @@
       "regions": ["fra1"]
     }
   },
-  "regions": ["fra1"],
   "headers": [
     {
       "source": "/(.*)",
@@ -146,19 +37,6 @@
           "value": "geolocation=(), microphone=(), camera=()"
         }
       ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/old-path",
-      "destination": "/new-path",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
     }
   ]
 }
