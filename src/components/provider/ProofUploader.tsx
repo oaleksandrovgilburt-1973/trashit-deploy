@@ -23,7 +23,7 @@ export default function ProofUploader({
   const [success, setSuccess] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileSelect = async (files: FileList) {
+  const handleFileSelect = async (files: FileList) => {
     if (!files.length) return;
 
     setError(null);
